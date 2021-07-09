@@ -42,6 +42,15 @@ class crop:
 			max_x=256*3
 		if max_y>256*3:
 			max_y=256*3
+		if x<y:
+			diff= y-x
+			min_x-=diff/2
+			max_x+=diff/2
+		if x>y:
+			diff= x-y
+			min_y-=diff/2
+			max_y+=diff/2	
+		
 		for k in range(len(self._points)-1):
 			self._points[k+1]=[self._points[k+1][0]-int(min_x),self._points[k+1][1]-int(min_y)]
 		
