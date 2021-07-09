@@ -46,5 +46,5 @@ class crop:
 			self._points[k+1]=[self._points[k+1][0]-int(min_x),self._points[k+1][1]-int(min_y)]
 		
 			
-		return self._points,img[int(min_y):int(max_y),int(min_x):int(max_x)]
+		return self._points,self._img[int(min_y):int(max_y),int(min_x):int(max_x)]
 			 
