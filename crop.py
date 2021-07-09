@@ -42,6 +42,8 @@ class crop:
 			max_x=256*3
 		if max_y>256*3:
 			max_y=256*3
+		x= max_x-min_x
+		y= max_y-min_y
 		if x<y:
 			diff= y-x
 			min_x-=diff/2
