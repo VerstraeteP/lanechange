@@ -7,7 +7,7 @@ class skeleton:
 	def __init__(self, img, points,tel):
 		self._points= points
 		self._img= img
-    self._tel=tel
+    		self._tel=tel
 		
 		
 	def nearest_nonzero_idx_v2(self,a,x,y):
