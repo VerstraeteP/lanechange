@@ -29,7 +29,7 @@ class skeleton:
 		np.unique(binary)
 		skel, distance = medial_axis(binary, return_distance=True)
 		dist_on_skel = distance * skel
-    cv2.imwrite("skel"+str(self._tel)+".png",dist_on_skel)
+		cv2.imwrite("skel"+str(self._tel)+".png",dist_on_skel)
 		for k in self._points[1:]:
 			
 			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
