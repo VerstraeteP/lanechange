@@ -29,7 +29,10 @@ class skeleton:
 		np.unique(binary)
 		skel, distance = medial_axis(binary, return_distance=True)
 		dist_on_skel = distance * skel
-		cv2.imwrite("skel"+str(self._tel)+".png",dist_on_skel)
+		colormap = plt.get_cmap('magma')
+		heatmap = (colormap(dist_on_skel) * 2**16).astype(np.uint16)[:,:,:3]
+		heatmap = cv2.cvtColor(heatmap, cv2.COLOR_RGB2BGR)
+		cv2.imwrite("skels"+str(self._tel)+".png",heatmap)
 		for k in self._points[1:]:
 			
 			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
