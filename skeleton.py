@@ -9,7 +9,7 @@ class skeleton:
 		self._img= img
 		
 		
-	def nearest_nonzero_idx_v2(a,x,y):
+	def nearest_nonzero_idx_v2(self,a,x,y):
 	    tmp = a[x,y]
 	    a[x,y] = 0
 	    r,c = np.nonzero(a)
@@ -24,13 +24,13 @@ class skeleton:
 
 
 		roadwidth=[]
-		binary = img > filters.threshold_otsu(self._img)
+		binary = self._img > filters.threshold_otsu(self._img)
 		np.unique(binary)
 		skel, distance = medial_axis(binary, return_distance=True)
 		dist_on_skel = distance * skel
 		for k in self._points[1:]:
 			
-			x, y= nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
+			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
 
 			roadwidth.append(dist_on_skel[x][y])
 			
