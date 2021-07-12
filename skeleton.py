@@ -4,9 +4,10 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 class skeleton:
-	def __init__(self, img, points):
+	def __init__(self, img, points,tel):
 		self._points= points
 		self._img= img
+    self._tel=tel
 		
 		
 	def nearest_nonzero_idx_v2(self,a,x,y):
@@ -28,6 +29,7 @@ class skeleton:
 		np.unique(binary)
 		skel, distance = medial_axis(binary, return_distance=True)
 		dist_on_skel = distance * skel
+    cv2.imwrite("skel"+str(self._tel)+".png",dist_on_skel)
 		for k in self._points[1:]:
 			
 			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
