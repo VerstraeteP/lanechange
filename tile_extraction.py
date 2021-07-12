@@ -124,8 +124,7 @@ class GoogleMapDownloader:
                
                 f = open("./images/afb.jpg", 'wb')
                 f.write(current_tile.content)
-                
-                 
+                os.remove(current_tile)
 
                 im = Image.open(current_tile[0])
                 map_img.paste(im, (x * 256, y * 256))
