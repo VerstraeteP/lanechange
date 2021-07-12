@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 import pickle
 
 from time import time
-from unet import *
-from dunet import *
-from dinknet import LinkNet34, DinkNet34, DinkNet50, DinkNet101, DinkNet34_less_pool
+from lanechange.unet import *
+from lanechange.dunet import *
+from lanechange.dinknet import LinkNet34, DinkNet34, DinkNet50, DinkNet101, DinkNet34_less_pool
 
 BATCHSIZE_PER_CARD = 4
 
