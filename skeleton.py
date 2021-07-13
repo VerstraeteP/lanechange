@@ -26,15 +26,15 @@ class skeleton:
 
 		roadwidth=[]
 		print(self._img.shape)
-		self._img = np.uint8(self._img)
+		des = np.uint8(self._img)
 		
 
-		des = cv2.bitwise_not(self._img)
+		
 		contour,hier = cv2.findContours(des,cv2.RETR_CCOMP,cv2.CHAIN_APPROX_SIMPLE)
 		print(len(contour))
 
 		for cnt in contour:
-			cv2.drawContours(des,[cnt],0,0,-1)
+			cv2.drawContours(des,[cnt],0,255,-1)
 		cv2.imwrite("after"+str(self._tel)+".jpg",des)
 
 
