@@ -26,7 +26,7 @@ class skeleton:
 
 		roadwidth=[]
 		print(self._img.shape)
-    self._img = np.uint8(self._img)
+		self._img = np.uint8(self._img)
 		
 
 		des = cv2.bitwise_not(self._img)
