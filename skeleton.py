@@ -35,7 +35,7 @@ class skeleton:
 
 		for cnt in contour:
 			cv2.drawContours(des,[cnt],0,255,-1)
-    		cv2.imwrite("after"+str(self._tel)+".jpg",des)
+		cv2.imwrite("after"+str(self._tel)+".jpg",des)
 
 
 		self._img = cv2.bitwise_not(des)
