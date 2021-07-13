@@ -34,7 +34,7 @@ class skeleton:
 		print(len(contour))
 
 		for cnt in contour:
-			cv2.drawContours(des,[cnt],0,255,-1)
+			cv2.drawContours(des,[cnt],0,0,-1)
 		cv2.imwrite("after"+str(self._tel)+".jpg",des)
 
 
