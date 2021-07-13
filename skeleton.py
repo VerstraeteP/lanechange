@@ -26,6 +26,7 @@ class skeleton:
 
 		roadwidth=[]
 		des = cv2.bitwise_not(self._img)
+		print(des.shape)
 		contour,hier = cv2.findContours(des,cv2.RETR_CCOMP,cv2.CHAIN_APPROX_SIMPLE)
 
 		for cnt in contour:
