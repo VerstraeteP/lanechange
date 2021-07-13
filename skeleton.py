@@ -26,7 +26,8 @@ class skeleton:
 
 		roadwidth=[]
 		print(self._img.shape)
-		self._img = cv2.cvtColor(self._img, cv2.COLOR_BGR2GRAY);
+		self._img = np.uint8(self._img)
+		
 
 		des = cv2.bitwise_not(self._img)
 		contour,hier = cv2.findContours(des,cv2.RETR_CCOMP,cv2.CHAIN_APPROX_SIMPLE)
