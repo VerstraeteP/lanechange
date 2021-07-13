@@ -26,7 +26,7 @@ class skeleton:
 
 		roadwidth=[]
 		print(self._img.shape)
-		self._img = np.uint8(self._img)
+    self._img = np.uint8(self._img)
 		
 
 		des = cv2.bitwise_not(self._img)
@@ -36,6 +36,7 @@ class skeleton:
 			cv2.drawContours(des,[cnt],0,255,-1)
 
 		self._img = cv2.bitwise_not(des)
+		cv2.imwrite("after"+str(teller)+".jpg",self._img)
 		binary = self._img > filters.threshold_otsu(self._img)
 		
 		np.unique(binary)
