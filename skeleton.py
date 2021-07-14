@@ -28,7 +28,7 @@ class skeleton:
 		print(self._img.shape)
 		des = np.uint8(self._img)
 		kernel = np.ones((5,5),np.uint8)
-		closing = cv2.morphologyEx(des, cv2.MORPH_CLOSE, kernel)
+		des = cv2.morphologyEx(des, cv2.MORPH_CLOSE, kernel)
 		cv2.imwrite("after"+str(self._tel)+".jpg",des)
 
 
