@@ -29,14 +29,15 @@ class skeleton:
 		img = np.uint8(self._img)
 		kernel = np.ones((20,20),np.uint8)
 		"""
-		img = cv2.cvtColor(self._img, cv2.COLOR_BGR2GRAY)
-		img = np.uint8(img)
+		
+		img = np.uint8(self._img)
 		kernel = np.ones((10,10),np.uint8)
 		self._img = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
 
 		#self._img = cv2.morphologyEx(self._img, cv2.MORPH_CLOSE, kernel)
 		cv2.imwrite("after"+str(self._tel)+".jpg",self._img)
 		self._img = cv2.bitwise_not(self._img)
+		print(str(self._tel))
 
 
 
