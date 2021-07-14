@@ -25,14 +25,15 @@ class skeleton:
 
 
 		roadwidth=[]
-		print(self._img.shape)
+		
 		self._img = np.uint8(self._img)
 		kernel = np.ones((5,5),np.uint8)
-		des = cv2.morphologyEx(self._img, cv2.MORPH_CLOSE, kernel)
+		self._img = cv2.bitwise_not(self._img)
+
+		self._img = cv2.morphologyEx(self._img, cv2.MORPH_CLOSE, kernel)
 		cv2.imwrite("after"+str(self._tel)+".jpg",des)
 
 
-		self._img = cv2.bitwise_not(des)
 		binary = self._img > filters.threshold_otsu(self._img)
 		
 		np.unique(binary)
