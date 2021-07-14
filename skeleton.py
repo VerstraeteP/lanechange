@@ -31,7 +31,7 @@ class skeleton:
 		self._img = cv2.bitwise_not(self._img)
 
 		self._img = cv2.morphologyEx(self._img, cv2.MORPH_CLOSE, kernel)
-		cv2.imwrite("after"+str(self._tel)+".jpg",des)
+		cv2.imwrite("after"+str(self._tel)+".jpg",self._img)
 
 
 		binary = self._img > filters.threshold_otsu(self._img)
