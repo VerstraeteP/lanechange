@@ -68,7 +68,7 @@ class skeleton:
 			print("width",dist_on_skel[y][x])
 			
 
-			roadwidth.append(dist_on_skel[x][y])
+			roadwidth.append(dist_on_skel[y][x])
 			
 		return after,roadwidth
 
