@@ -27,7 +27,7 @@ class gpx2data:
     new_xy=[]
     for k in self._points:
       
-      x1,y1= self.getXY(k[0],k[1],18)
+      x1,y1= self.getXY(k[0],k[1],17)
       if int(x1) not in range(start_x,start_x+3)  or int(y1) not in range(start_y,start_y+3) or start_x==-1 or start_y== -1:
         if len(new_xy)!=0:
           XY_array.append(new_xy)
