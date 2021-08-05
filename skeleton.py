@@ -32,11 +32,11 @@ class skeleton:
 		
 		img = np.uint8(self._img)
 		kernel = np.ones((10,10),np.uint8)
-		self._img = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
+		after = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
 
-		#self._img = cv2.morphologyEx(self._img, cv2.MORPH_CLOSE, kernel)
+		self._img = after
 		cv2.imwrite("after"+str(self._tel)+".jpg",self._img)
-		self._img = cv2.bitwise_not(self._img)
+		#self._img = cv2.bitwise_not(self._img)
 		print(str(self._tel))
 
 
@@ -54,9 +54,10 @@ class skeleton:
 		for k in self._points[1:]:
 			
 			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
+			print(x,y)
 
 			roadwidth.append(dist_on_skel[x][y])
 			
-		return roadwidth
+		return after,roadwidth
 
 
