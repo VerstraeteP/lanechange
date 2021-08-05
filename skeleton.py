@@ -19,7 +19,7 @@ class skeleton:
 	    return r[min_idx], c[min_idx]
 	"""
 	def nearest_nonzero_idx_v2(self,a,x,y):
-		nonzero = cv2.findNonZero(img)
+		nonzero = cv2.findNonZero(a)
 		distances = np.sqrt((nonzero[:,:,0] - x) ** 2 + (nonzero[:,:,1] - y) ** 2)
 		nearest_index = np.argmin(distances)
 		return nonzero[nearest_index]
