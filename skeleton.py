@@ -24,7 +24,7 @@ class skeleton:
 		nearest_index = np.argmin(distances)
 		print(nonzero[nearest_index])
 					  
-		return nonzero[nearest_index][0],nonzero[nearest_index][1]
+		return nonzero[nearest_index][0][0],nonzero[nearest_index][0][1]
 
 
 	def skeletonization(self):
