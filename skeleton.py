@@ -19,6 +19,7 @@ class skeleton:
 	    return r[min_idx], c[min_idx]
 	"""
 	def nearest_nonzero_idx_v2(self,a,x,y):
+		a.astype(int)
 		nonzero = cv2.findNonZero(a)
 		print(a)
 		distances = np.sqrt((nonzero[:,:,0] - x) ** 2 + (nonzero[:,:,1] - y) ** 2)
