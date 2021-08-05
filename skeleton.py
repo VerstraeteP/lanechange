@@ -59,7 +59,7 @@ class skeleton:
 		colormap = plt.get_cmap('magma')
 		heatmap = (colormap(dist_on_skel) * 2**16).astype(np.uint16)[:,:,:3]
 		heatmap = cv2.cvtColor(heatmap, cv2.COLOR_RGB2BGR)
-		cv2.imwrite("skels"+str(self._tel)+".png",heatmap)
+		cv2.imwrite("skels"+str(self._tel)+".png",dist_on_skel)
 		for k in self._points[1:]:
 			print("before:",self._tel,int(k[0]),int(k[1]))
 			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
