@@ -52,9 +52,9 @@ class skeleton:
 		heatmap = cv2.cvtColor(heatmap, cv2.COLOR_RGB2BGR)
 		cv2.imwrite("skels"+str(self._tel)+".png",heatmap)
 		for k in self._points[1:]:
-			print(int(k[0]),int(k[1]))
+			print("before:",int(k[0]),int(k[1]))
 			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
-			print(x,y)
+			print("after:",x,y)
 
 			roadwidth.append(dist_on_skel[x][y])
 			
