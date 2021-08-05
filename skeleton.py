@@ -64,6 +64,7 @@ class skeleton:
 			print("before:",self._tel,int(k[0]),int(k[1]))
 			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
 			print("after:",x,y)
+			print("width",dist_on_skel[x][y])
 
 			roadwidth.append(dist_on_skel[x][y])
 			
