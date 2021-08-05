@@ -20,6 +20,7 @@ class skeleton:
 	"""
 	def nearest_nonzero_idx_v2(self,a,x,y):
 		nonzero = cv2.findNonZero(a)
+		print(a)
 		distances = np.sqrt((nonzero[:,:,0] - x) ** 2 + (nonzero[:,:,1] - y) ** 2)
 		nearest_index = np.argmin(distances)
 		print(nonzero[nearest_index])
