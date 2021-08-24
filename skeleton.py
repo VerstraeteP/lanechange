@@ -109,7 +109,7 @@ class skeleton:
 		print(list_of_lanes)
 		print(list_of_labels)	
 
-			roadwidth.append(dist_on_skel[y][x])
+		#roadwidth.append(dist_on_skel[y][x])
 			
 		return after,roadwidth
 
