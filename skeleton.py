@@ -88,6 +88,8 @@ class skeleton:
 				if int(l)!=0:
 		
 					dist_on_skel[teller][teller2]=255
+		for k in lists:
+			dist_on_skel[k[0]][k[1]]=0
 		retval, labels = cv2.connectedComponents(np.uint8(dist_on_skel))
 		list_of_labels=[]
 		list_of_lanes=[]
