@@ -100,6 +100,7 @@ class skeleton:
 		for k in self._points[1:]:
 			l=self.nearest_nonzero_idx_v2(labels,k[0],k[1])
 			label=labels[l[0][1]][l[0][0]]
+			print("ok")	
 			try:
 				index=list_of_labels.index(label)
 				print(list_of_lanes[index])
@@ -120,7 +121,7 @@ class skeleton:
 		
 
 		roadwidth.append(sumtotal/number)
-		print("ok")	
+		
 		return after,roadwidth
 
 
