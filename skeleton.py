@@ -121,7 +121,7 @@ class skeleton:
 		
 		
 
-		roadwidth.append(sumtotal/number)
+			roadwidth.append(sumtotal/number)
 		
 		return after,roadwidth
 
