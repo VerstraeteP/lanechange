@@ -73,6 +73,7 @@ class skeleton:
 			print("after:",x,y)
 			print("width",dist_on_skel[y][x])
 		"""
+		print("geluuk")
 		#find crossings 
 		_, _, degrees = skeleton_to_csgraph(skel)
 		intersection_matrix = degrees > 2
