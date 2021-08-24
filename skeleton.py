@@ -61,12 +61,53 @@ class skeleton:
 		heatmap = (colormap(dist_on_skel) * 2**16).astype(np.uint16)[:,:,:3]
 		heatmap = cv2.cvtColor(heatmap, cv2.COLOR_RGB2BGR)
 		cv2.imwrite("skels"+str(self._tel)+".png",dist_on_skel)
+		"""
 		for k in self._points[1:]:
 			print("before:",self._tel,int(k[0]),int(k[1]))
 			x, y= self.nearest_nonzero_idx_v2(dist_on_skel,int(k[0]),int(k[1]))
 			print("after:",x,y)
 			print("width",dist_on_skel[y][x])
+		"""
+		#find crossings 
+		_, _, degrees = skeleton_to_csgraph(skel)
+		intersection_matrix = degrees > 2
+		
+		#list with crossings
+		lists=np.argwhere(intersection_matrix== True)
+		
+		#set crossingpixel to zero
+		logger=dist_on_skel.copy()
+		
+		for teller,k in enumerate(dist_on_skel):
+			for teller2,l in enumerate(k):
+				if int(l)!=0:
+		
+					dist_on_skel[teller][teller2]=255
+		retval, labels = cv2.connectedComponents(np.uint8(dist_on_skel))
+		list_of_labels=[]
+		list_of_lanes=[]
+		sumtotal=0
+		number=0
+		for k in self._points:
+			l=self.nearest_nonzero_idx_v2(labels,k[0],k[1])
+			label=labels[l[0][1]][l[0][0]]
+			try:
+				index=list_of_labels.index(label)
+				print(list_of_lanes[index])
+			except:
 			
+				
+				for teller1,k in enumerate(labels):
+					for teller2,l in enumerate(k):
+						
+						if l==label:
+							sumtotal+=logger[teller1][teller2]
+							number+=1
+				list_of_lanes.append(sumtotal/number)
+				
+				list_of_labels.append(label)
+		print(list_of_lanes)
+		print(list_of_labels)	
 
 			roadwidth.append(dist_on_skel[y][x])
 			
