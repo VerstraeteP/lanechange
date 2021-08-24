@@ -26,7 +26,7 @@ class skeleton:
 	def nearest_nonzero_idx_v2(self,a,x,y):
 		a.astype(int)
 		nonzero = cv2.findNonZero(a)
-		print(a)
+		
 		distances = np.sqrt((nonzero[:,:,0] - x) ** 2 + (nonzero[:,:,1] - y) ** 2)
 		nearest_index = np.argmin(distances)
 		
@@ -52,7 +52,7 @@ class skeleton:
 		self._img = after
 		cv2.imwrite("after"+str(self._tel)+".jpg",self._img)
 		#self._img = cv2.bitwise_not(self._img)
-		print(str(self._tel))
+		
 
 
 
@@ -73,7 +73,7 @@ class skeleton:
 			print("after:",x,y)
 			print("width",dist_on_skel[y][x])
 		"""
-		print("geluuk")
+		
 		#find crossings 
 		_, _, degrees = skeleton_to_csgraph(skel)
 		intersection_matrix = degrees > 2
@@ -96,17 +96,16 @@ class skeleton:
 		list_of_lanes=[]
 		sumtotal=0
 		number=0
-		print("gelukt")
-		print(self._points)
+		
 		for k in self._points[1:]:
-			print("ok")
+			
 			l=self.nearest_nonzero_idx_v2(labels,k[0],k[1])
-			print("ok2")
+			
 			label=labels[l[0][1]][l[0][0]]
 				
 			try:
 				index=list_of_labels.index(label)
-				print(list_of_lanes[index])
+				
 			except:
 			
 				
@@ -119,8 +118,7 @@ class skeleton:
 				list_of_lanes.append(sumtotal/number)
 				
 				list_of_labels.append(label)
-		print(list_of_lanes)
-		print(list_of_labels)
+		
 		
 
 		roadwidth.append(sumtotal/number)
