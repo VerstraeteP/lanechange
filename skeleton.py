@@ -97,6 +97,7 @@ class skeleton:
 		sumtotal=0
 		number=0
 		print("gelukt")
+		print(self._points)
 		for k in self._points[1:]:
 			l=self.nearest_nonzero_idx_v2(labels,k[0],k[1])
 			label=labels[l[0][1]][l[0][0]]
