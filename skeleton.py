@@ -1,7 +1,12 @@
 from skimage.morphology import medial_axis, skeletonize
 from skimage import morphology, filters
 import cv2
+import math
+from skan import skeleton_to_csgraph
+from skimage import io, morphology
+from skimage import io, morphology
 import matplotlib.pyplot as plt
+import skimage.measure
 import numpy as np
 class skeleton:
 	def __init__(self, img, points,tel):
