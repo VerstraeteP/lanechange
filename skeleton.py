@@ -29,7 +29,7 @@ class skeleton:
 		print(a)
 		distances = np.sqrt((nonzero[:,:,0] - x) ** 2 + (nonzero[:,:,1] - y) ** 2)
 		nearest_index = np.argmin(distances)
-		print(nonzero[nearest_index])
+		
 					  
 		return nonzero[nearest_index][0][0],nonzero[nearest_index][0][1]
 
@@ -93,7 +93,7 @@ class skeleton:
 		list_of_lanes=[]
 		sumtotal=0
 		number=0
-		for k in self._points:
+		for k in self._points[1:]:
 			l=self.nearest_nonzero_idx_v2(labels,k[0],k[1])
 			label=labels[l[0][1]][l[0][0]]
 			try:
