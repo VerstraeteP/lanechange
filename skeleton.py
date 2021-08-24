@@ -116,10 +116,11 @@ class skeleton:
 				
 				list_of_labels.append(label)
 		print(list_of_lanes)
-		print(list_of_labels)	
+		print(list_of_labels)
+		
 
 		roadwidth.append(sumtotal/number)
-			
+		print("ok")	
 		return after,roadwidth
 
 
