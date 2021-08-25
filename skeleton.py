@@ -113,8 +113,9 @@ class skeleton:
 					for teller2,l in enumerate(k):
 						
 						if l==label:
-							sumtotal+=logger[teller1][teller2]
-							number+=1
+							if logger[teller1][teller2]>2:
+								sumtotal+=logger[teller1][teller2]
+								number+=1
 				list_of_lanes.append(sumtotal/number)
 				
 				list_of_labels.append(label)
