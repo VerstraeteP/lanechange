@@ -94,7 +94,7 @@ class skeleton:
 		retval, labels = cv2.connectedComponents(np.uint8(dist_on_skel))
 		list_of_labels=[]
 		list_of_lanes=[]
-		
+		indexes=[]
 		
 		for k in self._points[1:]:
 			
@@ -125,7 +125,8 @@ class skeleton:
 								roadwidth.append(sumtotal/number)
 								"""
 								roadwidth.append(logger[teller1][teller2])
+								indexes.append(len(roadwidth))
 		
-		return after,roadwidth
+		return after,roadwidth,indexes
 
 
