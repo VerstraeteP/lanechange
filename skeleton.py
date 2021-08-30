@@ -92,23 +92,23 @@ class skeleton:
 		for k in lists:
 			dist_on_skel[k[0]][k[1]]=0
 		retval, labels = cv2.connectedComponents(np.uint8(dist_on_skel))
-		
+		list_of_labels=[]
+		list_of_lanes=[]
 		
 		
 		for k in self._points[1:]:
-			list_of_labels=[]
-			list_of_lanes=[]
+			
 			l=self.nearest_nonzero_idx_v2(labels,k[0],k[1])
 			
 			label=labels[l[0][1]][l[0][0]]
 				
 			try:
 				index=list_of_labels.index(label)
-				roadwidth.append(list_of_lanes[index])
 				
 			except:
-        			sumtotal=0
-        			number=0
+				sumtotal=0
+				number=0
+				
 				for teller1,k in enumerate(labels):
 					for teller2,l in enumerate(k):
 						
@@ -116,14 +116,14 @@ class skeleton:
 							if logger[teller1][teller2]>2:
 								sumtotal+=logger[teller1][teller2]
 								number+=1
-        			if sumtotal>0:
-         	 			list_of_lanes.append(sumtotal/number)
+        if sumtotal>0:
+          list_of_lanes.append(sumtotal/number)
           
-          				list_of_labels.append(label)
+          list_of_labels.append(label)
 		
 		
 
-					roadwidth.append(sumtotal/number)
+			roadwidth.append(sumtotal/number)
 		
 		return after,roadwidth
 
