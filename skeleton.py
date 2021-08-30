@@ -104,7 +104,7 @@ class skeleton:
 				
 			try:
 				index=list_of_labels.index(label)
-				roadwidth.append(list_of_lanes[index])
+				
 			except:
 				sumtotal=0
 				number=0
@@ -113,15 +113,18 @@ class skeleton:
 						
 						if l==label:
 							if logger[teller1][teller2]>2:
+								"""
 								sumtotal+=logger[teller1][teller2]
 								number+=1
 			if sumtotal>0:
 				list_of_lanes.append(sumtotal/number)
 				list_of_labels.append(label)
 		
-		
+			
 
-				roadwidth.append(sumtotal/number)
+								roadwidth.append(sumtotal/number)
+								"""
+								roadwidth.append(logger[teller1][teller2]
 		
 		return after,roadwidth
 
