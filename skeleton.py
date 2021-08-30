@@ -108,7 +108,6 @@ class skeleton:
 			except:
 				sumtotal=0
 				number=0
-				
 				for teller1,k in enumerate(labels):
 					for teller2,l in enumerate(k):
 						
