@@ -104,7 +104,6 @@ class skeleton:
 				
 			try:
 				index=list_of_labels.index(label)
-				
 			except:
 				sumtotal=0
 				number=0
