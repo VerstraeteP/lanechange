@@ -94,8 +94,7 @@ class skeleton:
 		retval, labels = cv2.connectedComponents(np.uint8(dist_on_skel))
 		list_of_labels=[]
 		list_of_lanes=[]
-		sumtotal=0
-		number=0
+		
 		
 		for k in self._points[1:]:
 			
@@ -107,7 +106,8 @@ class skeleton:
 				index=list_of_labels.index(label)
 				
 			except:
-			
+        			sumtotal=0
+        			number=0
 				
 				for teller1,k in enumerate(labels):
 					for teller2,l in enumerate(k):
@@ -116,9 +116,10 @@ class skeleton:
 							if logger[teller1][teller2]>2:
 								sumtotal+=logger[teller1][teller2]
 								number+=1
-				list_of_lanes.append(sumtotal/number)
-				
-				list_of_labels.append(label)
+        if sumtotal>0:
+          list_of_lanes.append(sumtotal/number)
+          
+          list_of_labels.append(label)
 		
 		
 
