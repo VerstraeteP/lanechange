@@ -104,6 +104,7 @@ class skeleton:
 				
 			try:
 				index=list_of_labels.index(label)
+				roadwidth.append(list_of_lanes[index])
 			except:
 				sumtotal=0
 				number=0
@@ -120,7 +121,7 @@ class skeleton:
 		
 		
 
-			roadwidth.append(sumtotal/number)
+				roadwidth.append(sumtotal/number)
 		
 		return after,roadwidth
 
