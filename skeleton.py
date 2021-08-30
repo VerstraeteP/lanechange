@@ -124,7 +124,7 @@ class skeleton:
 
 								roadwidth.append(sumtotal/number)
 								"""
-								roadwidth.append(logger[teller1][teller2]
+								roadwidth.append(logger[teller1][teller2])
 		
 		return after,roadwidth
 
