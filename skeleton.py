@@ -109,6 +109,7 @@ class skeleton:
 				print("except")
 				sumtotal=0
 				number=0
+				list_of_labels.append(label)
 				for teller1,k in enumerate(labels):
 					for teller2,l in enumerate(k):
 						
