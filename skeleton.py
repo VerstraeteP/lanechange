@@ -106,6 +106,7 @@ class skeleton:
 				index=list_of_labels.index(label)
 				
 			except:
+				print("except")
 				sumtotal=0
 				number=0
 				for teller1,k in enumerate(labels):
@@ -125,7 +126,7 @@ class skeleton:
 								roadwidth.append(sumtotal/number)
 								"""
 								roadwidth.append(logger[teller1][teller2])
-								indexes.append(len(roadwidth))
+				indexes.append(len(roadwidth))
 		
 		return after,roadwidth,indexes
 
