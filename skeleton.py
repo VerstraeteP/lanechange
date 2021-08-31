@@ -105,8 +105,7 @@ class skeleton:
 			try:
         
 				index=list_of_labels.index(label)
-        
-        			roadwidth.append(list_of_lanes[index])
+				roadwidth.append(list_of_lanes[index])
 			except:
 				print("except")
         
