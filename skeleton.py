@@ -105,15 +105,11 @@ class skeleton:
 			try:
         
 				index=list_of_labels.index(label)
-        			"""
-				indexes.append(len(roadwidth))
-        			"""
+        
         			roadwidth.append(list_of_lanes[index])
 			except:
 				print("except")
-        			"""
-				indexes.append(len(roadwidth))
-        			"""
+        
 				sumtotal=0
 				number=0
 				list_of_labels.append(label)
