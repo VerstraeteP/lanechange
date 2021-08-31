@@ -65,7 +65,7 @@ class skeleton:
 		colormap = plt.get_cmap('magma')
 		heatmap = (colormap(dist_on_skel) * 2**16).astype(np.uint16)[:,:,:3]
 		heatmap = cv2.cvtColor(heatmap, cv2.COLOR_RGB2BGR)
-		cv2.imwrite("skels"+str(self._tel)+".png",dist_on_skel)
+		cv2.imwrite("skels"+str(self._tel)+".png",heatmap)
 		"""
 		for k in self._points[1:]:
 			print("before:",self._tel,int(k[0]),int(k[1]))
@@ -107,6 +107,7 @@ class skeleton:
 				indexes.append(len(roadwidth))
 			except:
 				print("except")
+        			indexes.append(len(roadwidth))
 				sumtotal=0
 				number=0
 				list_of_labels.append(label)
@@ -127,7 +128,7 @@ class skeleton:
 								roadwidth.append(sumtotal/number)
 								"""
 								roadwidth.append(logger[teller1][teller2])
-				indexes.append(len(roadwidth))
+				
 		
 		return after,roadwidth,indexes
 
