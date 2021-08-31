@@ -107,7 +107,7 @@ class skeleton:
 				indexes.append(len(roadwidth))
 			except:
 				print("except")
-        			indexes.append(len(roadwidth))
+				indexes.append(len(roadwidth))
 				sumtotal=0
 				number=0
 				list_of_labels.append(label)
