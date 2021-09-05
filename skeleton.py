@@ -127,7 +127,7 @@ class skeleton:
 								roadwidth.append(sumtotal/number)
 								"""
 								roadwidth.append(logger[teller1][teller2])
-               							console.log(logger[teller1][teller2])
+								console.log(logger[teller1][teller2])
 				
 		
 		return after,roadwidth,indexes
