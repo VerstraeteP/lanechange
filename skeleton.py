@@ -80,7 +80,8 @@ class skeleton:
 		
 		#list with crossings
 		lists=np.argwhere(intersection_matrix== True)
-		
+		print("lists")
+		print(lists)
 		#set crossingpixel to zero
 		logger=dist_on_skel.copy()
 		
