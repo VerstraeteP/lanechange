@@ -21,6 +21,7 @@ class gpx2data:
     return point_x, point_y
   
   def calculate_points(self):
+	
     XY_array=[]
     start_x=-1
     start_y=-1
