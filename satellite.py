@@ -10,6 +10,7 @@ import skimage.measure
 import numpy as np
 import numpy as np
 import cv2
+from scipy.signal import convolve2d
 from skan.csr import make_degree_image
 
 import matplotlib.pyplot as plt
