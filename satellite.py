@@ -19,6 +19,7 @@ class road_map:
 	def __init__(self,image):
 		self.image=image
 	def convolution(self,image):
+		image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 		kernel = np.ones((3,3))
 		kernel[1,1] = 0
 		mask = convolve2d(image, kernel, mode='same', fillvalue=1)
