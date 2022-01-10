@@ -34,7 +34,8 @@ class road_map:
 		kernel = np.int8([[-1, -1, -1],[-1, +1, -1],[-1, -1, -1]])
 		neighbors_all_zero = cv2.morphologyEx(src=self.image, op=cv2.MORPH_HITMISS, kernel=kernel)
 		self.image = self.image & ~neighbors_all_zero
-		cv2.imwrite("neighbours.png",self.image)
+		cv2.imwrite("neighboursbefore.png",self.image)
+		convolution(self.image)
 	def nearest_nonzero_idx_v2(self,a,x,y):
 		a.astype(int)
 		nonzero = cv2.findNonZero(a)
@@ -44,7 +45,7 @@ class road_map:
 		
 					  
 		return nonzero[nearest_index]
-	def convolution(image):
+	def convolution(self,image):
 		kernel = np.ones((3,3))
 		kernel[1,1] = 0
 		mask = convolve2d(image, kernel, mode='same', fillvalue=1)
