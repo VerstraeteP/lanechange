@@ -35,7 +35,7 @@ class road_map:
 		neighbors_all_zero = cv2.morphologyEx(src=self.image, op=cv2.MORPH_HITMISS, kernel=kernel)
 		self.image = self.image & ~neighbors_all_zero
 		cv2.imwrite("neighboursbefore.png",self.image)
-		convolution(self.image)
+		self.convolution(self.image)
 	def nearest_nonzero_idx_v2(self,a,x,y):
 		a.astype(int)
 		nonzero = cv2.findNonZero(a)
