@@ -44,6 +44,15 @@ class road_map:
 		
 					  
 		return nonzero[nearest_index]
+	def convolution(image):
+		kernel = np.ones((3,3))
+		kernel[1,1] = 0
+		mask = convolve2d(image, kernel, mode='same', fillvalue=1)
+		result = image.copy()
+		result[np.logical_and(mask==8, test==0)] = 1
+		cv2.imwrite("neighbours.png",result)
+
+		return result
 
 
 	def skeletonization(self):
