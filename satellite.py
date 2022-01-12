@@ -20,15 +20,16 @@ class road_map:
 		self.image=image
 	def convolution(self):
 		
-		kernel = np.ones((3,3))
-		kernel[1,1] = 0
-		mask = convolve2d(self.image, kernel, mode='same', fillvalue=1)
+		kernel = np.ones((5,3),unint8)
+		#kernel[1,1]=0
+		image = cv2.erode(self.image, kernel) 
+		#mask = convolve2d(self.image, kernel, mode='same', fillvalue=1)
 		
 		#result = image.copy()
 		#result[np.logical_and(mask==8, test==0)] = 1
-		#cv2.imwrite("neighbours.png",result)
+		cv2.imwrite("neighbours.png",image)
 
-		return mask
+		return image
 
 	def make_skeleton(self):
 		
@@ -48,7 +49,7 @@ class road_map:
 		neighbors_all_zero = cv2.morphologyEx(src=self.image, op=cv2.MORPH_HITMISS, kernel=kernel)
 		self.image = self.image & ~neighbors_all_zero
 		cv2.imwrite("neighboursbefore.png",self.image)
-		mask=self.convolution(self.image)
+		mask=self.convolution()
 		return mask
 	def nearest_nonzero_idx_v2(self,a,x,y):
 		a.astype(int)
