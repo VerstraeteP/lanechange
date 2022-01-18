@@ -22,14 +22,14 @@ class road_map:
 		
 		kernel = np.ones((5,3),unint8)
 		#kernel[1,1]=0
-		image = cv2.erode(self.image, kernel) 
+		self.image = cv2.erode(self.image, kernel) 
 		#mask = convolve2d(self.image, kernel, mode='same', fillvalue=1)
 		
 		#result = image.copy()
 		#result[np.logical_and(mask==8, test==0)] = 1
-		cv2.imwrite("neighbours.png",image)
+		cv2.imwrite("neighbours.png",self.image)
 
-		return image
+		return self.image
 
 	def make_skeleton(self):
 		
