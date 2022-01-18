@@ -20,7 +20,7 @@ class road_map:
 		self.image=image
 	def convolution(self):
 		
-		kernel = np.ones((5,3),unint8)
+		kernel = np.ones((5,3),np.uint8)
 		#kernel[1,1]=0
 		self.image = cv2.erode(self.image, kernel) 
 		#mask = convolve2d(self.image, kernel, mode='same', fillvalue=1)
