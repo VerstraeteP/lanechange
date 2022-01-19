@@ -48,7 +48,7 @@ class road_map:
 		kernel = np.int8([[-1, -1, -1],[-1, +1, -1],[-1, -1, -1]])
 		neighbors_all_zero = cv2.morphologyEx(src=self.image, op=cv2.MORPH_HITMISS, kernel=kernel)
 		self.image = self.image & ~neighbors_all_zero
-		cv2.imwrite("neighboursbefore.png",self.image)
+		
 		mask=self.convolution()
 		return mask
 	def nearest_nonzero_idx_v2(self,a,x,y):
@@ -76,6 +76,7 @@ class road_map:
 		np.unique(binary)
 		skel, distance = medial_axis(binary, return_distance=True)
 		dist_on_skel = distance * skel
+		cv2.imwrite("neighboursbefore.png",self.image)
 	
 		#cv2.imwrite("skelssat"+str(self._tel)+".png",heatmap)
 		#find crossings 
