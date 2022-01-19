@@ -76,7 +76,6 @@ class road_map:
 		np.unique(binary)
 		skel, distance = medial_axis(binary, return_distance=True)
 		dist_on_skel = distance * skel
-		cv2.imwrite("neighboursbefore.png",self.image)
 	
 		#cv2.imwrite("skelssat"+str(self._tel)+".png",heatmap)
 		#find crossings 
@@ -87,7 +86,8 @@ class road_map:
 		lists=np.argwhere(intersection_matrix== True)
 		#set crossingpixel to zero
 		logger=dist_on_skel.copy()
-		
+		cv2.imwrite("neighboursbefore.png",self.image)
+
 		for teller,k in enumerate(dist_on_skel):
 			for teller2,l in enumerate(k):
 				if int(l)!=0:
