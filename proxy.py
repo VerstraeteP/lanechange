@@ -5,6 +5,8 @@ import traceback
 import sys
 import urllib.request, socket
 from threading import Thread
+
+#programm to scrape website( free-proxy-list.net) for proxies 
 class proxies:
 	def __init__(self, n_proxies=50):
 		self._n_proxies= n_proxies
